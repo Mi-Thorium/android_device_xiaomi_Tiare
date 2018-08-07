@@ -41,6 +41,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     camera.msm8937
 
+# Go
+# Enable DM file preopting to reduce first boot time
+PRODUCT_DEX_PREOPT_GENERATE_DM_FILES := true
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := verify
+
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/ft5346.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/ft5346.kl \
