@@ -35,6 +35,7 @@ TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_tiare
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.android_dt_dir=/non-existent androidboot.boot_devices=soc/7824900.sdhci
 BOARD_KERNEL_CMDLINE += earlycon=msm_serial_dm,0x78af000
+BOARD_KERNEL_CMDLINE += cgroup.memory=nokmem,nosocket
 TARGET_KERNEL_CONFIG := tiare_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
 TARGET_KERNEL_RECOVERY_CONFIG := tiare_recovery_defconfig
