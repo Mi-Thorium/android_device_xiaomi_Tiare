@@ -8,7 +8,25 @@
 
 function blob_fixup() {
     case "${1}" in
+        vendor/lib/libmmcamera2_cpp_module.so \
+        |vendor/lib/libmmcamera2_dcrf.so \
+        |vendor/lib/libmmcamera2_imglib_modules.so \
+        |vendor/lib/libmmcamera2_mct.so \
+        |vendor/lib/libmmcamera2_pproc_modules.so \
+        |vendor/lib/libmmcamera2_q3a_core.so \
+        |vendor/lib/libmmcamera2_sensor_modules.so \
+        |vendor/lib/libmmcamera2_stats_algorithm.so \
+        |vendor/lib/libmmcamera2_stats_modules.so \
+        |vendor/lib/libmmcamera_dbg.so \
+        |vendor/lib/libmmcamera_imglib.so \
+        |vendor/lib/libmmcamera_pdafcamif.so \
+        |vendor/lib/libmmcamera_pdaf.so \
+        |vendor/lib/libmmcamera_tintless_algo.so \
+        |vendor/lib/libmmcamera_tintless_bg_pca_algo.so)
+            sed -i 's|data/misc/camera|data/vendor/qcam|g' "${2}"
+            ;;
         vendor/lib/libmmcamera2_iface_modules.so)
+            sed -i 's|data/misc/camera|data/vendor/qcam|g' "${2}"
             # Always set 0 (Off) as CDS mode in iface_util_set_cds_mode
             sed -i -e 's|\xfd\xb1\x20\x68|\xfd\xb1\x00\x20|g' "${2}"
             PATTERN_FOUND=$(hexdump -ve '1/1 "%.2x"' "${2}" | grep -E -o "fdb10020" | wc -l)
