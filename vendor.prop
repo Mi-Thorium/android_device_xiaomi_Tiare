@@ -16,3 +16,7 @@ vendor.audio.mixer_xml.path=/vendor/etc/mixer_paths_qrd_sku2.xml
 persist.camera.gyro.disable=0
 persist.vendor.camera.CDS=off
 persist.vendor.camera.video.CDS=off
+
+# Xiaomi tiare - SoC
+ro.soc.manufacturer=Qualcomm
+ro.soc.model=MSM8917
