@@ -1,3 +1,6 @@
+# Xiaomi tiare - Audio
+vendor.audio.mixer_xml.path=/vendor/etc/mixer_paths_qrd_sku2.xml
+
 # Xiaomi tiare - Camera
 persist.camera.gyro.disable=0
 persist.vendor.camera.CDS=off
