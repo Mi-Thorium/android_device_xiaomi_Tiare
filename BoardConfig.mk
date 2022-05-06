@@ -20,12 +20,18 @@ DEVICE_PATH := device/xiaomi/Tiare
 # Boot animation
 TARGET_BOOTANIMATION_HALF_RES := true
 
+# Display
+TARGET_SCREEN_DENSITY := 267
+
 # HIDL
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/gatekeeper.xml
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/keymaster.xml
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Kernel
+BOARD_KERNEL_CMDLINE += earlycon=msm_serial_dm,0x78af000
 TARGET_KERNEL_CONFIG := tiare_defconfig
+TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
 TARGET_KERNEL_RECOVERY_CONFIG := tiare_recovery_defconfig
 
 # Partitions
@@ -47,6 +53,9 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/proc/sys/dev/dt2w"
+
+# Recovery
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-01-05
