@@ -12,12 +12,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_mini_go_phone.mk)
 
-# Inherit from tiare device
-$(call inherit-product, device/xiaomi/tiare/device.mk)
+# Inherit from Tiare device
+$(call inherit-product, device/xiaomi/Tiare/device.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := tiare
-PRODUCT_NAME := lineage_tiare
+PRODUCT_DEVICE := Tiare
+PRODUCT_NAME := lineage_Tiare
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Go

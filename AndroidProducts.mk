@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_tiare.mk
+    $(LOCAL_DIR)/lineage_Tiare.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_tiare-user \
-    lineage_tiare-userdebug \
-    lineage_tiare-eng
+    lineage_Tiare-user \
+    lineage_Tiare-userdebug \
+    lineage_Tiare-eng

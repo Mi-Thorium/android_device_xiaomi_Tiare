@@ -31,8 +31,8 @@ fi
 
 set -e
 
-export DEVICE=tiare
-export DEVICE_COMMON=msm8937-common
+export DEVICE=Tiare
+export DEVICE_COMMON=mithorium-common
 export VENDOR=xiaomi
 
 "./../../${VENDOR}/${DEVICE_COMMON}/extract-files.sh" "$@"
