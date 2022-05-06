@@ -12,10 +12,10 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := squashfs
 BOARD_VENDORIMAGE_JOURNAL_SIZE := 0
 BOARD_VENDORIMAGE_SQUASHFS_COMPRESSOR := lz4
 
-# Inherit from common msm8937-common
-include device/xiaomi/msm8937-common/BoardConfigCommon.mk
+# Inherit from common mithorium-common
+include device/xiaomi/mithorium-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/xiaomi/tiare
+DEVICE_PATH := device/xiaomi/Tiare
 
 # Boot animation
 TARGET_BOOTANIMATION_HALF_RES := true
@@ -55,4 +55,4 @@ VENDOR_SECURITY_PATCH := 2021-01-05
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Inherit from the proprietary version
-include vendor/xiaomi/tiare/BoardConfigVendor.mk
+include vendor/xiaomi/Tiare/BoardConfigVendor.mk
