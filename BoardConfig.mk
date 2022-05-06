@@ -17,6 +17,9 @@ include device/xiaomi/mithorium-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/xiaomi/Tiare
 
+# Asserts
+TARGET_OTA_ASSERT_DEVICE := tiare,Tiare
+
 # Boot animation
 TARGET_BOOTANIMATION_HALF_RES := true
 
@@ -27,6 +30,10 @@ TARGET_SCREEN_DENSITY := 267
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/gatekeeper.xml
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/keymaster.xml
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
+
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_tiare
+TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_tiare
 
 # Kernel
 BOARD_KERNEL_CMDLINE += earlycon=msm_serial_dm,0x78af000
