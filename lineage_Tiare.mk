@@ -15,6 +15,10 @@ $(call inherit-product, vendor/lineage/config/common_mini_go_phone.mk)
 # Inherit from Tiare device
 $(call inherit-product, device/xiaomi/Tiare/device.mk)
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-lineage
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := Tiare
 PRODUCT_NAME := lineage_Tiare
