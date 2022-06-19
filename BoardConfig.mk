@@ -36,7 +36,6 @@ TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_tiare
 TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_tiare
 
 # Kernel
-BOARD_KERNEL_CMDLINE += earlycon=msm_hsl_uart,0x78b000
 TARGET_KERNEL_CONFIG := tiare_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
 TARGET_KERNEL_RECOVERY_CONFIG := tiare_recovery_defconfig
