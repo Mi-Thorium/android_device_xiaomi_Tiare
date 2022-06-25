@@ -34,7 +34,7 @@ TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_tiare
 TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_tiare
 
 # Kernel
-BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/7824900.sdhci
+BOARD_KERNEL_CMDLINE += androidboot.android_dt_dir=/non-existent androidboot.boot_devices=soc/7824900.sdhci
 BOARD_KERNEL_CMDLINE += earlycon=msm_serial_dm,0x78af000
 TARGET_KERNEL_CONFIG := tiare_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
