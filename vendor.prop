@@ -12,6 +12,9 @@ persist.vendor.audio.calfile6=/vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 persist.vendor.audio.calfile7=/vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
 vendor.audio.mixer_xml.path=/vendor/etc/mixer_paths_qrd_sku2.xml
 
+# Xiaomi tiare - Bluetooth
+bluetooth.sco.disable_enhanced_connection=1
+
 # Xiaomi tiare - Camera
 persist.camera.gyro.disable=0
 persist.vendor.camera.CDS=off
