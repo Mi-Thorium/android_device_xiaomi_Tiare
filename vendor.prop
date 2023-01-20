@@ -20,6 +20,9 @@ persist.vendor.audio.fluence.voicerec=false
 ro.vendor.audio.sdk.fluencetype=fluence
 vendor.audio.feature.fluence.enable=true
 
+# Xiaomi tiare - Bluetooth
+bluetooth.sco.disable_enhanced_connection=1
+
 # Xiaomi tiare - Camera
 persist.vendor.camera.CDS=off
 persist.vendor.camera.video.CDS=off
