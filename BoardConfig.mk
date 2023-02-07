@@ -18,7 +18,7 @@ DEVICE_PATH := device/xiaomi/Tiare
 TARGET_OTA_ASSERT_DEVICE := tiare,Tiare
 
 # Boot animation
-TARGET_BOOTANIMATION_HALF_RES := true
+TARGET_BOOTANIMATION := $(DEVICE_PATH)/prebuilt/bootanimation.zip
 
 # Display
 TARGET_SCREEN_DENSITY := 267
