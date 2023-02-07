@@ -39,6 +39,9 @@ TARGET_KERNEL_CONFIG := tiare_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
 TARGET_KERNEL_RECOVERY_CONFIG := tiare_recovery_defconfig
 
+# Malloc
+MALLOC_SVELTE := true
+
 # Partitions
 TARGET_COPY_OUT_VENDOR := vendor
 BOARD_BOOTIMAGE_PARTITION_SIZE := 50331648
