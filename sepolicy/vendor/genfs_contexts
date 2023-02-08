@@ -15,3 +15,6 @@ genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-006b/power_supply/usb		
 
 # Touchscreen
 genfscon sysfs /board_properties/virtualkeys.ft5346			u:object_r:sysfs_virtualkeys:s0
+
+# Vibrator
+genfscon sysfs /devices/platform/soc/soc:vibrator_gpio/leds/vibrator	u:object_r:sysfs_vibrator:s0
