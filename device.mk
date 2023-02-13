@@ -44,6 +44,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     camera.msm8937
 
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0.vendor
+
 # Go
 # Enable DM file preopting to reduce first boot time
 PRODUCT_DEX_PREOPT_GENERATE_DM_FILES := true
@@ -56,6 +60,10 @@ DONT_UNCOMPRESS_PRIV_APPS_DEXS := true
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fts_ts-mi8937.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/fts_ts-mi8937.kl \
     $(LOCAL_PATH)/keylayout/goodix-ts.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/goodix-ts.kl
+
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0.vendor
 
 # Rootdir
 PRODUCT_PACKAGES += \
