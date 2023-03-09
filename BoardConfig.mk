@@ -30,6 +30,9 @@ endif
 # Display
 TARGET_SCREEN_DENSITY := 280
 
+# Filesystem
+BOARD_EROFS_USE_LEGACY_COMPRESSION := true
+
 # HIDL
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/gatekeeper.xml
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/keymaster.xml
@@ -61,10 +64,10 @@ TARGET_KERNEL_CONFIG += \
     vendor/xiaomi/msm8937/common.config \
     vendor/xiaomi/msm8937/tiare.config \
     vendor/xiaomi/feature/android-12.config \
+    vendor/xiaomi/feature/erofs.config \
     vendor/xiaomi/feature/exfat.config \
     vendor/xiaomi/feature/lmkd.config \
-    vendor/xiaomi/feature/uclamp.config \
-    vendor/xiaomi/feature/squashfs.config
+    vendor/xiaomi/feature/uclamp.config
 
 ifeq ($(MI8937_CAM_USE_LATEST_CAMERA_STACK),true)
 TARGET_KERNEL_CONFIG += vendor/xiaomi/msm8937/optional/latest-camera-stack.config
@@ -93,12 +96,8 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 50331648
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_CACHEIMAGE_PARTITION_SIZE := 16777216
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 25165824
+BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1971322880
-
-BOARD_SYSTEMIMAGE_EXTFS_INODE_COUNT := 8192
-BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := squashfs
-BOARD_SYSTEMIMAGE_JOURNAL_SIZE := 0
-BOARD_SYSTEMIMAGE_SQUASHFS_COMPRESSOR := lz4
 
 BOARD_SUPER_PARTITION_BLOCK_DEVICES := system vendor
 BOARD_SUPER_PARTITION_METADATA_DEVICE := system
