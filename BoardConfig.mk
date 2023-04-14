@@ -21,7 +21,7 @@ TARGET_OTA_ASSERT_DEVICE := tiare,Tiare
 TARGET_BOOTANIMATION := $(DEVICE_PATH)/prebuilt/bootanimation.zip
 
 # Display
-TARGET_SCREEN_DENSITY := 267
+TARGET_SCREEN_DENSITY := 280
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/gatekeeper.xml
