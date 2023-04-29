@@ -1,5 +1,6 @@
 # HALs
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.software	u:object_r:hal_gatekeeper_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.xiaomi_tiare	u:object_r:hal_lineage_touch_default_exec:s0
 
 # Partitions
 /dev/block/platform/soc/7824900\.sdhci/by-name/cache    u:object_r:system_block_device:s0

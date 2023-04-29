@@ -71,5 +71,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Touch HAL
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.xiaomi_tiare
+
 # Inherit from vendor blobs
 $(call inherit-product, vendor/xiaomi/Tiare/Tiare-vendor.mk)
