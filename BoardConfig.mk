@@ -86,7 +86,7 @@ BOARD_TIARE_DYNPART_PARTITION_LIST := system vendor
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Power
-TARGET_TAP_TO_WAKE_NODE := "/proc/sys/dev/dt2w"
+TARGET_TAP_TO_WAKE_NODE := "/proc/sys/dev/xiaomi_msm8937_touchscreen/enable_dt2w"
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
