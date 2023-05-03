@@ -28,6 +28,10 @@ LOCAL_SRC_FILES += \
 
 LOCAL_CFLAGS := -Wall -Wextra -Werror -Wno-unused-parameter -Wno-unused-variable
 
+ifeq ($(MI8937_CAM_USE_LATEST_CAMERA_STACK),true)
+LOCAL_CFLAGS += -DUSE_LATEST_CAMERA_STACK
+endif
+
 #HAL 1.0 source
 
 ifeq ($(TARGET_SUPPORT_HAL1),false)

@@ -22,6 +22,7 @@ TARGET_OTA_ASSERT_DEVICE := tiare,Tiare,Tiare_4_19
 TARGET_BOOTANIMATION := $(DEVICE_PATH)/prebuilt/bootanimation.zip
 
 # Camera
+#MI8937_CAM_USE_LATEST_CAMERA_STACK := true
 ifeq ($(TARGET_KERNEL_VERSION),4.19)
 TARGET_SUPPORT_HAL1 := false
 endif
@@ -63,6 +64,10 @@ TARGET_KERNEL_CONFIG += \
     vendor/xiaomi/feature/lmkd.config \
     vendor/xiaomi/feature/uclamp.config \
     vendor/xiaomi/feature/squashfs.config
+
+ifeq ($(MI8937_CAM_USE_LATEST_CAMERA_STACK),true)
+TARGET_KERNEL_CONFIG += vendor/xiaomi/msm8937/optional/latest-camera-stack.config
+endif
 
 TARGET_KERNEL_RECOVERY_CONFIG := \
     vendor/msm8937-perf_defconfig
