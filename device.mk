@@ -58,7 +58,7 @@ DONT_UNCOMPRESS_PRIV_APPS_DEXS := true
 
 # Input
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/ft5346.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/ft5346.kl \
+    $(LOCAL_PATH)/keylayout/fts_ts-mi8937.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/fts_ts-mi8937.kl \
     $(LOCAL_PATH)/keylayout/goodix-ts.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/goodix-ts.kl
 
 # Keymaster
