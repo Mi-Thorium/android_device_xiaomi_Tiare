@@ -39,9 +39,25 @@ TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_tiare
 BOARD_KERNEL_CMDLINE += androidboot.android_dt_dir=/non-existent androidboot.boot_devices=soc/7824900.sdhci
 BOARD_KERNEL_CMDLINE += earlycon=msm_serial_dm,0x78af000
 BOARD_KERNEL_CMDLINE += cgroup.memory=nokmem,nosocket
-TARGET_KERNEL_CONFIG := tiare_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
-TARGET_KERNEL_RECOVERY_CONFIG := tiare_recovery_defconfig
+
+TARGET_KERNEL_CONFIG := \
+    vendor/msm8937-perf_defconfig \
+    vendor/xiaomi/common.config \
+    vendor/xiaomi/msm8937/common.config \
+    vendor/xiaomi/msm8937/tiare.config \
+    vendor/xiaomi/feature/android-12.config \
+    vendor/xiaomi/feature/lmkd.config \
+    vendor/xiaomi/feature/squashfs.config
+
+TARGET_KERNEL_RECOVERY_CONFIG := \
+    vendor/msm8937-perf_defconfig \
+    vendor/xiaomi/common.config \
+    vendor/xiaomi/msm8937/common.config \
+    vendor/xiaomi/msm8937/tiare.config \
+    vendor/xiaomi/feature/no-audio-stack.config \
+    vendor/xiaomi/feature/no-camera-stack.config \
+    vendor/xiaomi/feature/no-wlan-driver.config
 
 # Malloc
 MALLOC_SVELTE := true
