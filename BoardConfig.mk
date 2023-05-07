@@ -47,8 +47,8 @@ TARGET_KERNEL_CONFIG := \
     vendor/xiaomi/msm8937/common.config \
     vendor/xiaomi/msm8937/tiare.config \
     vendor/xiaomi/feature/android-12.config \
-    vendor/xiaomi/feature/lmkd.config \
-    vendor/xiaomi/feature/squashfs.config
+    vendor/xiaomi/feature/erofs.config \
+    vendor/xiaomi/feature/lmkd.config
 
 TARGET_KERNEL_RECOVERY_CONFIG := \
     vendor/msm8937-perf_defconfig \
