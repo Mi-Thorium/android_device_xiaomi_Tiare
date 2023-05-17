@@ -109,7 +109,7 @@
     <ctl name="ADC1_INP1 Switch" value="0" />
 
     <!-- bug 391554 - C3G AW87329 audio pa bring up wt tsx  begin -->
-    <ctl name="SPK PA GPIO Switch" value="0" />
+    <ctl name="SPK PA GPIO" value="DISABLE" />
     <!-- bug 391554 - end -->
     <!-- Bug 394334 - add for checklist wt tsx  begin -->
     <ctl name="EAR PA Boost" value="DISABLE" />
@@ -1105,7 +1105,7 @@
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="RDAC2 MUX" value="RX2" />
         <ctl name="HPHR" value="Switch" />
-        <ctl name="SPK PA GPIO Switch" value="1" />
+        <ctl name="SPK PA GPIO" value="ENABLE" />
     </path>
 
     <path name="wsa-speaker">
@@ -1223,7 +1223,7 @@
 
     <path name="speaker-and-headphones">
         <path name="headphones" />
-        <ctl name="SPK PA GPIO Switch" value="1" />
+        <ctl name="SPK PA GPIO" value="ENABLE" />
     </path>
 
     <path name="usb-headphones">
