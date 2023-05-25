@@ -13,7 +13,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 $(call inherit-product, vendor/lineage/config/common_mini_go_phone.mk)
 
 # Kernel
-TARGET_KERNEL_VERSION := 4.9
+TARGET_KERNEL_VERSION := 4.19
 
 # Inherit from Tiare device
 $(call inherit-product, device/xiaomi/Tiare/device.mk)
@@ -23,8 +23,8 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := Tiare
-PRODUCT_NAME := lineage_Tiare
+PRODUCT_DEVICE := Tiare_4_19
+PRODUCT_NAME := lineage_Tiare_4_19
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Go

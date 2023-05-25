@@ -13,9 +13,10 @@ BOARD_VENDORIMAGE_PARTITION_RESERVED_SIZE := 41943040
 include device/xiaomi/mithorium-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/xiaomi/Tiare
+USES_DEVICE_XIAOMI_TIARE := true
 
 # Asserts
-TARGET_OTA_ASSERT_DEVICE := tiare,Tiare
+TARGET_OTA_ASSERT_DEVICE := tiare,Tiare,Tiare_4_19
 
 # Boot animation
 TARGET_BOOTANIMATION := $(DEVICE_PATH)/prebuilt/bootanimation.zip
@@ -36,10 +37,19 @@ TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_tiare
 BOARD_KERNEL_CMDLINE += androidboot.android_dt_dir=/non-existent androidboot.boot_devices=soc/7824900.sdhci
 BOARD_KERNEL_CMDLINE += earlycon=msm_serial_dm,0x78af000
 BOARD_KERNEL_CMDLINE += cgroup.memory=nokmem,nosocket
+ifeq ($(TARGET_KERNEL_VERSION),4.19)
+TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937-4.19
+else
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
+endif
 
 TARGET_KERNEL_CONFIG := \
-    vendor/msm8937-perf_defconfig \
+    vendor/msm8937-perf_defconfig
+ifeq ($(TARGET_KERNEL_VERSION),4.19)
+TARGET_KERNEL_CONFIG += \
+    vendor/msm8937-legacy.config
+endif
+TARGET_KERNEL_CONFIG += \
     vendor/xiaomi/common.config \
     vendor/xiaomi/msm8937/common.config \
     vendor/xiaomi/msm8937/tiare.config \
@@ -50,7 +60,12 @@ TARGET_KERNEL_CONFIG := \
     vendor/xiaomi/feature/squashfs.config
 
 TARGET_KERNEL_RECOVERY_CONFIG := \
-    vendor/msm8937-perf_defconfig \
+    vendor/msm8937-perf_defconfig
+ifeq ($(TARGET_KERNEL_VERSION),4.19)
+TARGET_KERNEL_RECOVERY_CONFIG += \
+    vendor/msm8937-legacy.config
+endif
+TARGET_KERNEL_RECOVERY_CONFIG += \
     vendor/xiaomi/common.config \
     vendor/xiaomi/msm8937/common.config \
     vendor/xiaomi/msm8937/tiare.config \
@@ -101,4 +116,8 @@ VENDOR_SECURITY_PATCH := 2021-01-05
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Inherit from the proprietary version
+ifeq ($(TARGET_KERNEL_VERSION),4.19)
+include vendor/xiaomi/Tiare_4_19/BoardConfigVendor.mk
+else
 include vendor/xiaomi/Tiare/BoardConfigVendor.mk
+endif
