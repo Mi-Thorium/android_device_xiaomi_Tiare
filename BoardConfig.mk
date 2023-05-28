@@ -21,6 +21,11 @@ TARGET_OTA_ASSERT_DEVICE := tiare,Tiare,Tiare_4_19
 # Boot animation
 TARGET_BOOTANIMATION := $(DEVICE_PATH)/prebuilt/bootanimation.zip
 
+# Camera
+ifeq ($(TARGET_KERNEL_VERSION),4.19)
+TARGET_SUPPORT_HAL1 := false
+endif
+
 # Display
 TARGET_SCREEN_DENSITY := 280
 
