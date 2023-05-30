@@ -31,7 +31,11 @@ endif
 TARGET_SCREEN_DENSITY := 280
 
 # Filesystem
+ifeq ($(TARGET_KERNEL_VERSION),4.9)
 BOARD_EROFS_USE_LEGACY_COMPRESSION := true
+else
+BOARD_EROFS_PCLUSTER_SIZE := 262144
+endif
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifest/gatekeeper.xml
