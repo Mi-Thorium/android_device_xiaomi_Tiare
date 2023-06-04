@@ -52,9 +52,6 @@ BOARD_KERNEL_CMDLINE += earlycon=msm_serial_dm,0x78af000
 BOARD_KERNEL_CMDLINE += cgroup.memory=nokmem,nosocket
 BOARD_RAMDISK_USE_XZ := true
 ifeq ($(TARGET_KERNEL_VERSION),4.19)
-TARGET_KERNEL_CLANG_VERSION := r416183b
-TARGET_KERNEL_CLANG_PATH := $(abspath .)/prebuilts/clang/kernel/$(HOST_PREBUILT_TAG)/clang-$(TARGET_KERNEL_CLANG_VERSION)
-TARGET_KERNEL_LLVM_BINUTILS := false
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937-4.19
 else
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
