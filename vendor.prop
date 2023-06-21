@@ -17,7 +17,6 @@ bluetooth.le.disable_apcf_extended_features=1
 bluetooth.sco.disable_enhanced_connection=1
 
 # Xiaomi tiare - Camera
-persist.camera.gyro.disable=0
 persist.vendor.camera.CDS=off
 persist.vendor.camera.video.CDS=off
 
