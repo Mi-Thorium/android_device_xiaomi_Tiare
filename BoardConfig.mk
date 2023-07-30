@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Kernel
+TARGET_USES_MITHORIUM_KERNEL := true
+
 # Partitions
 BOARD_VENDORIMAGE_EXTFS_INODE_COUNT := 4096
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -44,26 +47,13 @@ BOARD_KERNEL_CMDLINE += androidboot.android_dt_dir=/non-existent androidboot.boo
 BOARD_KERNEL_CMDLINE += earlycon=msm_serial_dm,0x78af000
 BOARD_KERNEL_CMDLINE += cgroup.memory=nokmem,nosocket
 BOARD_RAMDISK_USE_XZ := true
-ifeq ($(TARGET_KERNEL_VERSION),4.19)
-TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937-4.19
-else
-TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
-endif
 
-TARGET_KERNEL_CONFIG := \
-    vendor/msm8937-perf_defconfig
 ifeq ($(TARGET_KERNEL_VERSION),4.19)
 TARGET_KERNEL_CONFIG += \
     vendor/msm8937-legacy.config
 endif
 TARGET_KERNEL_CONFIG += \
-    vendor/common.config \
-    vendor/feature/android-12.config \
-    vendor/feature/exfat.config \
-    vendor/feature/kprobes.config \
-    vendor/feature/lmkd.config \
     vendor/feature/squashfs.config \
-    vendor/feature/uclamp.config \
     vendor/xiaomi/msm8937/common.config \
     vendor/xiaomi/msm8937/tiare.config
 
@@ -71,17 +61,12 @@ ifeq ($(MI8937_CAM_USE_LATEST_CAMERA_STACK),true)
 TARGET_KERNEL_CONFIG += vendor/xiaomi/msm8937/optional/latest-camera-stack.config
 endif
 
-TARGET_KERNEL_RECOVERY_CONFIG := \
-    vendor/msm8937-perf_defconfig
 ifeq ($(TARGET_KERNEL_VERSION),4.19)
 TARGET_KERNEL_RECOVERY_CONFIG += \
     vendor/msm8937-legacy.config
 endif
 TARGET_KERNEL_RECOVERY_CONFIG += \
-    vendor/common.config \
     vendor/feature/no-audio-stack.config \
-    vendor/feature/no-camera-stack.config \
-    vendor/feature/no-wlan-driver.config \
     vendor/xiaomi/msm8937/common.config \
     vendor/xiaomi/msm8937/tiare.config
 
