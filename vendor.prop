@@ -12,6 +12,14 @@ persist.vendor.audio.calfile6=/vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 persist.vendor.audio.calfile7=/vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
 vendor.audio.mixer_xml.path=/vendor/etc/mixer_paths_qrd_sku2.xml
 
+# Xiaomi tiare - Audio fluence
+persist.vendor.audio.fluence.speaker=true
+persist.vendor.audio.fluence.voicecall=true
+persist.vendor.audio.fluence.voicecomm=false
+persist.vendor.audio.fluence.voicerec=false
+ro.vendor.audio.sdk.fluencetype=fluence
+vendor.audio.feature.fluence.enable=true
+
 # Xiaomi tiare - Camera
 persist.vendor.camera.CDS=off
 persist.vendor.camera.video.CDS=off
