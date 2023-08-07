@@ -57,6 +57,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fts_ts-mi8937.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/fts_ts-mi8937.kl \
     $(LOCAL_PATH)/keylayout/goodix-ts.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/goodix-ts.kl
 
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service-sysfs
+
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.qcom_ramdisk \
