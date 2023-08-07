@@ -1,2 +1,8 @@
+# HVDCP
 on init
     stop vendor.hvdcp_opti
+
+# LiveDisplay
+on boot
+    chown root root /sys/devices/virtual/graphics/fb0/hbm
+    chmod 0000 /sys/devices/virtual/graphics/fb0/hbm
