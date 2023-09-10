@@ -80,8 +80,4 @@ PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.xiaomi_tiare
 
 # Inherit from vendor blobs
-ifeq ($(TARGET_KERNEL_VERSION),4.19)
-$(call inherit-product, vendor/xiaomi/Tiare_4_19/Tiare_4_19-vendor.mk)
-else
 $(call inherit-product, vendor/xiaomi/Tiare/Tiare-vendor.mk)
-endif

@@ -113,8 +113,4 @@ VENDOR_SECURITY_PATCH := 2021-01-05
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Inherit from the proprietary version
-ifeq ($(TARGET_KERNEL_VERSION),4.19)
-include vendor/xiaomi/Tiare_4_19/BoardConfigVendor.mk
-else
 include vendor/xiaomi/Tiare/BoardConfigVendor.mk
-endif
