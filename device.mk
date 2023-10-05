@@ -75,10 +75,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0.vendor
 
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sysfs
-
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.qcom_ramdisk \
@@ -92,10 +88,6 @@ PRODUCT_COPY_FILES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
-
-# Touch HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.xiaomi_tiare
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/xiaomi/Tiare/Tiare-vendor.mk)
