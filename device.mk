@@ -71,6 +71,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fts_ts-mi8937.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/fts_ts-mi8937.kl \
     $(LOCAL_PATH)/keylayout/goodix-ts.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/goodix-ts.kl
 
+# Kernel - Prebuilt
+ifeq ($(TARGET_KERNEL_VERSION),4.19)
+PRODUCT_COPY_FILES += device/xiaomi/kernel-mithorium/Tiare_4_19/Image.gz-dtb:kernel
+else
+PRODUCT_COPY_FILES += device/xiaomi/kernel-mithorium/Tiare/Image.gz-dtb:kernel
+endif
+
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0.vendor

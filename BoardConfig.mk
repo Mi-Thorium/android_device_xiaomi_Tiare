@@ -77,6 +77,13 @@ TARGET_KERNEL_RECOVERY_CONFIG += \
     vendor/xiaomi/msm8937/common.config \
     vendor/xiaomi/msm8937/tiare.config
 
+# Kernel - Prebuilt
+ifeq ($(TARGET_KERNEL_VERSION),4.19)
+BOARD_VENDOR_KERNEL_MODULES += $(wildcard device/xiaomi/kernel-mithorium/Tiare_4_19/*.ko)
+else
+BOARD_VENDOR_KERNEL_MODULES += $(wildcard device/xiaomi/kernel-mithorium/Tiare/*.ko)
+endif
+
 # Malloc
 MALLOC_SVELTE := true
 
