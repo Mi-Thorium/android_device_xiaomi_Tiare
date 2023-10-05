@@ -4,27 +4,18 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
-
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_mini_phone.mk)
-
 # Kernel
 TARGET_KERNEL_VERSION := 4.19
 
 # Inherit from Tiare device
 $(call inherit-product, device/xiaomi/Tiare/device.mk)
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := Tiare_4_19
-PRODUCT_NAME := lineage_Tiare_4_19
+PRODUCT_NAME := aosp_Tiare_4_19
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Go

@@ -5,13 +5,13 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_Tiare.mk \
-    $(LOCAL_DIR)/lineage_Tiare_4_19.mk
+    $(LOCAL_DIR)/aosp_Tiare.mk \
+    $(LOCAL_DIR)/aosp_Tiare_4_19.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_Tiare-user \
-    lineage_Tiare-userdebug \
-    lineage_Tiare-eng \
-    lineage_Tiare_4_19-user \
-    lineage_Tiare_4_19-userdebug \
-    lineage_Tiare_4_19-eng
+    aosp_Tiare-user \
+    aosp_Tiare-userdebug \
+    aosp_Tiare-eng \
+    aosp_Tiare_4_19-user \
+    aosp_Tiare_4_19-userdebug \
+    aosp_Tiare_4_19-eng
