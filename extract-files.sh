@@ -8,6 +8,14 @@
 
 function blob_fixup() {
     case "${1}" in
+        vendor/lib/libchromaflash.so \
+        |vendor/lib/libmmcamera_hdr_gb_lib.so \
+        |vendor/lib/liboptizoom.so \
+        |vendor/lib/libseemore.so \
+        |vendor/lib/libtrueportrait.so \
+        |vendor/lib/libubifocus.so)
+            "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
+            ;;
         vendor/lib/libmmcamera2_cpp_module.so \
         |vendor/lib/libmmcamera2_dcrf.so \
         |vendor/lib/libmmcamera2_imglib_modules.so \
